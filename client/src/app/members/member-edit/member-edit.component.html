@@ -10,7 +10,7 @@
             <h1>{{member.knownAs}}</h1>
             }
         <div class="card-body">
-            <img src="{{member.photoUrl || './assets/user.ping'}}" alt="{{member.knownAs}}"
+            <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}"
                 class="card-img img-thumbnail">
         </div>
         <div>
@@ -72,7 +72,9 @@
 
             </tab>
             <tab heading="Edit Photos">
-                Photo Edit goes here
+                <app-photo-editor [member]="member"
+                (memberChange)="onMemberChange($event)"
+                ></app-photo-editor>
             </tab>
 
         </tabset>

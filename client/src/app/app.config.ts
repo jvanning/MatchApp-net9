@@ -8,6 +8,7 @@ import { provideToastr } from 'ngx-toastr';
 import { errorInterceptor } from './_interceptors/error.interceptor';
 import { jwtInterceptor } from './_interceptors/jwt.interceptor';
 import { loadingInterceptor } from './_interceptors/loading.interceptor';
+import { NgxSpinner, NgxSpinnerModule } from 'ngx-spinner';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,7 +17,8 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideToastr({
       positionClass: 'toast-bottom-right'
-    })
+    }),
     importProvidersFrom(NgxSpinnerModule)
+    
   ]
 };
