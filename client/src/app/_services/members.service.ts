@@ -47,14 +47,14 @@ export class MembersService {
     });
   }
 
-  getMember(userName: string){
+  getMember(username: string){
     const member: Member = [...this.memberCache.values()]
     .reduce((arr, elem) => arr.concat(elem.body), [])
-    .find((m: Member) => m.userName === userName);
+    .find((m: Member) => m.username === username);
 
     if (member) return of(member);
 
-    return this.http.get<Member>(this.baseURL + 'users/' + userName)
+    return this.http.get<Member>(this.baseURL + 'users/' + username)
   }
 
   updatemember(member: Member){
