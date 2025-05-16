@@ -69,8 +69,4 @@ public class LikeRepository(DataContext context, IMapper mapper) : ILikesReposit
         
     }
 
-    public async Task<bool> SaveChanges()
-    {
-       return await context.SaveChangesAsync() > 0;
-    }
 }
